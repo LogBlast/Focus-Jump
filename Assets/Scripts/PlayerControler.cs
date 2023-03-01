@@ -16,6 +16,8 @@ public class PlayerControler : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    public Animator animator;
+
     private Vector3 velocity = Vector3.zero;
     
 
@@ -36,6 +38,10 @@ public class PlayerControler : MonoBehaviour
        float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;   // time.deltaTime == temps qu'on reste appuyer sur la touche
 
         MovePlayer(horizontalMovement);
+
+
+        float.characterVelocity = mathf.Abs(rb.velocity.x);  // renvoie toujours une valeur positive
+        animator.SetFloat("Speed",characterVelocity);
     }
     
     void  MovePlayer(float _horizontalMovement) {  // convention de nomage _var
