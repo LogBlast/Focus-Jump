@@ -6089,6 +6089,8 @@ MonoBehaviour:
   moveSpeed: 250
   jumpForce: 300
   rb: {fileID: 2062261553}
+  animator: {fileID: 2062261556}
+  spriteRenderer: {fileID: 0}
 --- !u!61 &2062261552
 BoxCollider2D:
   m_ObjectHideFlags: 0

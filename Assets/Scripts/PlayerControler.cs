@@ -18,6 +18,8 @@ public class PlayerControler : MonoBehaviour
 
     public Animator animator;
 
+    public SpriteRenderer spriteRenderer;
+
     private Vector3 velocity = Vector3.zero;
     
 
@@ -38,9 +40,10 @@ public class PlayerControler : MonoBehaviour
        float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;   // time.deltaTime == temps qu'on reste appuyer sur la touche
 
         MovePlayer(horizontalMovement);
+        Flip(rb.velocity.x);
 
 
-        float.characterVelocity = mathf.Abs(rb.velocity.x);  // renvoie toujours une valeur positive
+        float characterVelocity = Mathf.Abs(rb.velocity.x);  // renvoie toujours une valeur positive
         animator.SetFloat("Speed",characterVelocity);
     }
     
@@ -55,6 +58,17 @@ public class PlayerControler : MonoBehaviour
             isJumping = false;
         }
     
+    }
+
+    void Flip(float velocity){
+        if(velocity > 0.1f){   // si la vélocité est positive, alors le modèle du personage est tourné vers la droite
+            spriteRenderer.flipX=false;
+        }
+        else if(velocity<-0.1f){  // si la vélocité est négative, alors le modèle du personage est tourné vers la gauche
+            spriteRenderer.flipX=true;  
+        }
+
+        // la vélocité est compris entre -1 et 1
     }   
 
 
