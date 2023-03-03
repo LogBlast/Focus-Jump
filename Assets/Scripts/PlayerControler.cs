@@ -25,7 +25,7 @@ public class PlayerControler : MonoBehaviour
     
     void Update() {
 
-
+         
 
         if (Input.GetButtonDown("Jump") && isGrounded){ // touche native de Unity qui représente la barre espace  
             isJumping = true;
