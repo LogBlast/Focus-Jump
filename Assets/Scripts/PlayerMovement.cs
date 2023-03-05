@@ -22,7 +22,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
     private bool canMove = true;
-    public float delayJump=3;
+    public float delayJump;
+
+    public PhysicsMaterial2D bounceMat, normalMat;
 
     void Update()
     {
@@ -62,7 +64,15 @@ public class PlayerMovement : MonoBehaviour
         //Le systeme qui gere les animations (animator) recoit la variable Speed et switch l'animation repos a courir
         animator.SetFloat("Speed", characterVelocity); 
 
-
+        //ajout de l'effet de rebond quand on cogne les murs
+        if(jumpForce > 0)
+        {
+            rb.sharedMaterial = bounceMat;
+        }
+        else
+        {
+            rb.sharedMaterial = normalMat;
+        }
 
     }
 
@@ -110,28 +120,20 @@ public class PlayerMovement : MonoBehaviour
             // On calcule la durée du saut en millisecondes
             int dif_jump = (int)(jumpEnd - jumpStart).TotalMilliseconds;
 
-            // Si le saut a duré plus de 4 secondes, on applique une force maximale
+            // Si le saut a duré plus de 2 secondes, on applique une force maximale
             if (dif_jump >= delayJump*1000)
             {
-                
-                rb.AddForce(new Vector2(0f, jumpForce));
-                
-            }
-
-            // Si le saut a duré moins de 2 seconde, on applique une force minimale
-            else if (dif_jump < 2000)
-            {
-
-                rb.AddForce(new Vector2(0f, jumpForce/2));
+                //on saute a la puissance max + la puissance de saut minimum
+                rb.AddForce(new Vector2(0f, jumpForce+250));
                 
             }
 
             // Sinon, on applique une force proportionnelle à la durée du saut
             else
             {
-
-                rb.AddForce(new Vector2(0f, jumpForce * (float)(dif_jump / (delayJump * 1000.0))));
-                
+                float force;
+                force = jumpForce * (float)(dif_jump / (delayJump * 1000.0));
+                rb.AddForce(new Vector2(0f, force+250));
             }
 
             // On désactive le booléen isJumping pour indiquer que le joueur a terminé son saut, et on réinitialise la valeur de jumpStart
