@@ -122,15 +122,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a057cbe74db2144977a09b832c9f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 6
+  isJumping: 0
   isGrounded: 0
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 0
-  canJump: 1
-  jumpValue: 10
   groundCheck: {fileID: 6813085875575634761}
   groundCheckRadius: 0.4
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  moveSpeed: 0
+  jumpForce: 0
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  delayJump: 3
+  bounceMat: {fileID: 0}
+  normalMat: {fileID: 0}
 --- !u!95 &6813085875105738152
 Animator:
   serializedVersion: 5
