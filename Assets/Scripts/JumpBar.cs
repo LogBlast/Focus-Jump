@@ -15,8 +15,26 @@ public class JumpBar : MonoBehaviour
     public Image fill;
     public float duration; // Durée totale de l'animation
 
+
+
+
+    public GameObject player;
+    public Vector3 offset;
+    private Vector3 velocity;
+
     void Update()
     {
+
+        if (player != null)
+        {
+            Vector3 playerHeadPosition = Camera.main.WorldToScreenPoint(player.transform.position + offset);
+            transform.position = playerHeadPosition;
+
+        }
+
+
+
+
         // Si le bouton de saut est appuyé et le personnage est au sol
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -46,6 +64,8 @@ public class JumpBar : MonoBehaviour
 
     void Start()
     {
+
+
         // Masquer l'objet spécifié au démarrage
         gameO.transform.localScale = new Vector3(0, 0, 0);
     }

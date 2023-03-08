@@ -24,10 +24,16 @@ public class PlayerMovement : MonoBehaviour
     private bool canMove = true;
     public float delayJump;
 
+    //ajout pour la barre qui suit le joueur 
+   // public GameObject player;
+    //public float timeOffset;
+    //public Vector3 posOffset;
+
     public PhysicsMaterial2D bounceMat, normalMat;
 
     void Update()
     {
+        //transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + posOffset, ref velocity, timeOffset);
 
         //Quand tu appuie sur espace et que tu est au sol
         // touche native de Unity qui représente la barre espace
