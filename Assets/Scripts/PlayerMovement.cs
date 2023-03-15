@@ -2,8 +2,9 @@ using UnityEngine;
 using System;
 public class PlayerMovement : MonoBehaviour
 {
-    public bool isJumping;
+    public bool isJumping ;
     public bool isGrounded;
+    public bool saut = false; 
 
     public Transform groundCheck;
     public float groundCheckRadius;
@@ -23,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalMovement;
     private bool canMove = true;
     public float delayJump;
+
+    private float jumpDirection;
+
 
     //ajout pour la barre qui suit le joueur 
    // public GameObject player;
@@ -47,8 +51,13 @@ public class PlayerMovement : MonoBehaviour
             canMove = false;
 
             //Le systeme qui gere les animations (animator) recoit la variable canMove et switch les animations courir, repos a charger le saut 
-            animator.SetBool("canMove", false); 
+            animator.SetBool("canMove", false);
+
+            
+
         }
+
+        
 
         //Quand on relache le bouton espace et qu'on est au sol et qu'on a pas commencer a sauter
         if (Input.GetButtonUp("Jump") && isGrounded && jumpStart != DateTime.MinValue){  
@@ -59,6 +68,9 @@ public class PlayerMovement : MonoBehaviour
 
             //Le systeme qui gere les animations (animator) recoit la variable canMove et switch l'animation charger le saut a courir ou repos 
             animator.SetBool("canMove", true);
+            
+
+
         }
         
         //Permet de retourner le personnage en fonction de son axe de deplacement
@@ -80,6 +92,23 @@ public class PlayerMovement : MonoBehaviour
             rb.sharedMaterial = normalMat;
         }
 
+        
+
+        if (!isGrounded)
+        {
+            saut = true;
+        }
+
+        if (isGrounded)
+        {
+
+            saut = false;
+
+        }
+
+
+
+
     }
 
     // en permanence
@@ -98,13 +127,25 @@ public class PlayerMovement : MonoBehaviour
             MovePlayer(horizontalMovement);
         }
 
-
-
+       
         // On vérifie si le joueur est actuellement au sol en utilisant un cercle de rayon groundCheckRadius
         // centré sur la position groundCheck.position du joueur. Si ce cercle touche un layer appartenant
         // à la liste collisionLayers, alors le joueur est considéré comme étant au sol.
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
 
+
+        if (saut)
+        {
+            canMove = false;
+
+        }
+
+
+
+
+
+        // Debug.Log(horizontalMovement);
+        //  Debug.Log(isJumping);
     }
 
 
@@ -176,4 +217,9 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
+
+
+
 }
+
+
