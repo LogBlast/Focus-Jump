@@ -136,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        Debug.Log("3" + canMove);
+        
 
 
     }
