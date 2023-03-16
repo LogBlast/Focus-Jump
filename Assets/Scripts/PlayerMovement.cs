@@ -2,10 +2,10 @@ using UnityEngine;
 using System;
 public class PlayerMovement : MonoBehaviour
 {
-    public bool isJumping ;
+    public bool StartJumping ;
     public bool isGrounded;
-    public bool saut = false; 
-
+    public bool saut = false;
+    public bool canMove;
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask collisionLayers;
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
-    private bool canMove = true;
+    
     public float delayJump;
 
     private float jumpDirection;
@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)  {
             //le timer de saut se lance
             jumpStart = DateTime.Now;
+            StartJumping = true;
 
             //reset les mouvements du personnage
             rb.velocity = Vector3.zero;  
@@ -57,15 +58,23 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        
+       
 
-        //Quand on relache le bouton espace et qu'on est au sol et qu'on a pas commencer a sauter
-        if (Input.GetButtonUp("Jump") && isGrounded && jumpStart != DateTime.MinValue){  
+
+
+        //Quand on relache le bouton espace et qu'on est au sol et qu'on a commencer a sauter
+        if (Input.GetButtonUp("Jump")  && isGrounded && jumpStart != DateTime.MinValue){  
 
             jumpEnd = DateTime.Now;
-            isJumping = true;
-            canMove = true;
+           // StartJumping = true; //le perso decole du sol
+           
 
+            canMove = true;
+            
+            
+
+           
+            
             //Le systeme qui gere les animations (animator) recoit la variable canMove et switch l'animation charger le saut a courir ou repos 
             animator.SetBool("canMove", true);
             
@@ -93,21 +102,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         
-
-        if (!isGrounded)
-        {
-            saut = true;
-        }
-
-        if (isGrounded)
-        {
-
-            saut = false;
-
-        }
-
-
-
+       
+       
 
     }
 
@@ -115,44 +111,44 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
         // On vérifie si le joueur peut se déplacer.
         if (canMove)
         {
-            // On récupère la valeur de l'axe horizontal (gauche/droite) du clavier et on multiplie par la vitesse de déplacement
-            // et le temps écoulé depuis la dernière frame pour obtenir la distance parcourue horizontalement.
-            horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-
+            //empecher de changer de direction en l'air; je laisse canMove = true a ce moment sinon pas de force dans le saut je l'empche juste de tourner a droite ou a gauche
+            //horizontalMovement vaut 0 donc pas de mouvement mais une force de saut uniquement
+            if (isGrounded)
+            {
+                // On récupère la valeur de l'axe horizontal (gauche/droite) du clavier et on multiplie par la vitesse de déplacement
+                // et le temps écoulé depuis la dernière frame pour obtenir la distance parcourue horizontalement.
+                horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+            }
+            
             // On déplace le joueur en utilisant la direction récupérée.
             MovePlayer(horizontalMovement);
         }
 
-       
+
+
         // On vérifie si le joueur est actuellement au sol en utilisant un cercle de rayon groundCheckRadius
         // centré sur la position groundCheck.position du joueur. Si ce cercle touche un layer appartenant
         // à la liste collisionLayers, alors le joueur est considéré comme étant au sol.
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
 
 
-        if (saut)
-        {
-            canMove = false;
 
-        }
+        Debug.Log("3" + canMove);
 
 
-
-
-
-        // Debug.Log(horizontalMovement);
-        //  Debug.Log(isJumping);
     }
 
 
     // Cette fonction permet de déplacer le joueur en fonction de sa direction 
     // convention de nomage _var
     void MovePlayer(float _horizontalMovement)
-    { 
+    {
+
+
+
 
         // la direction vers laquelle on va se déplacer va être basé sur _horiz (axe X) et l'axe vertical (Y) 
         // rb.velocity.y --> va prendre la valeur par défaut de la force du rigidbody
@@ -162,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
 
         // Si le joueur est en train de sauter
-        if (isJumping == true)
+        if (StartJumping == true)
         {
             // On calcule la durée du saut en millisecondes
             int dif_jump = (int)(jumpEnd - jumpStart).TotalMilliseconds;
@@ -184,7 +180,8 @@ public class PlayerMovement : MonoBehaviour
             }
 
             // On désactive le booléen isJumping pour indiquer que le joueur a terminé son saut, et on réinitialise la valeur de jumpStart
-            isJumping = false;
+            
+            StartJumping = false;
             jumpStart = DateTime.MinValue;
 
         }
