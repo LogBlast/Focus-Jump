@@ -27,8 +27,8 @@ public class JumpBar : MonoBehaviour
 
         if (player != null)
         {
-            Vector3 playerHeadPosition = Camera.main.WorldToScreenPoint(player.transform.position + offset);
-            transform.position = playerHeadPosition;
+            //Vector3 playerHeadPosition = Camera.main.WorldToScreenPoint(player.transform.position + offset);
+            //transform.position = playerHeadPosition;
 
         }
 

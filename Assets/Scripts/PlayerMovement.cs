@@ -81,6 +81,8 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
+
+       
         
         //Permet de retourner le personnage en fonction de son axe de deplacement
         Flip(rb.velocity.x);
