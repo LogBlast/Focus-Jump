@@ -6,11 +6,11 @@ public class LoadCamera : MonoBehaviour
 {
     public Transform player;
     public List<Transform> cameras;
-    private float cameraHeight=10f;
+    private float cameraHeight=10f; 
 
     public Transform activeCamera;
     private int cameraIndex=0;
-    //ouahdipuhapziûedhapiuzdpioauzd
+    
 
     void Start()
     {
@@ -31,9 +31,9 @@ public class LoadCamera : MonoBehaviour
             activeCamera.gameObject.SetActive(true);
 
             // Increase the camera height threshold
-            cameraHeight += 14f;
+            cameraHeight += 14f;//mettre le f
         }
-        else if (player.position.y < cameraHeight - 14f && cameraIndex > 0)
+        else if (player.position.y < cameraHeight - 14f && cameraIndex > 0)//mettre le f
         {
             // Disable the current camera and activate the previous one
             activeCamera.gameObject.SetActive(false);
@@ -42,7 +42,7 @@ public class LoadCamera : MonoBehaviour
             activeCamera.gameObject.SetActive(true);
 
             // Decrease the camera height threshold
-            cameraHeight -= 14;
+            cameraHeight -= 14f;//mettre le f
         }
     }
 }
