@@ -8,15 +8,22 @@ public class LoadCamera : MonoBehaviour
     public List<Transform> cameras;
     private float cameraHeight=10f; //mettre le f
 
-    public Transform activeCamera;
-    private int cameraIndex=0;
+    public Transform activeCamera ;
+    public int cameraIndex;
     
 
     void Start()
     {
+
         // Set the first camera as active
-        activeCamera = cameras[cameraIndex];
+        activeCamera = cameras[0];
+        int index = cameras.IndexOf(activeCamera);
+        cameraIndex = (index != -1) ? index : 0;
         activeCamera.gameObject.SetActive(true);
+        Debug.Log(activeCamera);
+
+
+
     }
 
     void Update()
@@ -44,5 +51,7 @@ public class LoadCamera : MonoBehaviour
             // Decrease the camera height threshold
             cameraHeight -= 14f;//mettre le f
         }
+        Debug.Log(activeCamera);
     }
+
 }
