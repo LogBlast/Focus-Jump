@@ -6,7 +6,7 @@ public class LoadCamera : MonoBehaviour
 {
     public Transform player;
     public List<Transform> cameras;
-    private float cameraHeight=10f; 
+    private float cameraHeight=10f; //mettre le f
 
     public Transform activeCamera;
     private int cameraIndex=0;
