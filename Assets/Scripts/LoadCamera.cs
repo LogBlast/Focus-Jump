@@ -5,62 +5,37 @@ using UnityEngine;
 public class LoadCamera : MonoBehaviour
 {
     public Transform player;
-    public List<Transform> cameras;
-    public float cameraHeight = 10f; //mettre le f
+    public GameObject mainCamera;
+    public float cameraHeight = 14f;
+    public float cameraStep = 14f;
 
-    public Transform activeCamera;
-    public int cameraIndex;
-
+    private float lastCameraHeight;
 
     void Start()
     {
-
-        // Set the first camera as active
-        activeCamera = cameras[0];
-        int index = cameras.IndexOf(activeCamera);
-        cameraIndex = (index != -1) ? index : 0;
-
-        // Activer la première caméra
-        activeCamera.GetComponent<Camera>().enabled = true;
-
-        // Déboguer la caméra active
-        Debug.Log(activeCamera);
-
-
+        lastCameraHeight = cameraHeight;
     }
 
     void Update()
     {
-        // Check if the player has moved up or down enough to switch cameras
-        if (player.position.y >= cameraHeight && cameraIndex < cameras.Count - 1)
+        if (player.position.y >= lastCameraHeight + cameraStep)
         {
-            // Désactiver la caméra courante et activer la suivante
-            activeCamera.GetComponent<Camera>().enabled = false;
-            cameraIndex++;
-            activeCamera = cameras[cameraIndex];
+            // Move the camera up by cameraStep units
+            mainCamera.transform.position += Vector3.up * cameraStep;
 
-            // Activer la nouvelle caméra
-            activeCamera.GetComponent<Camera>().enabled = true;
-
-            // Augmenter le seuil de hauteur de la caméra
-            cameraHeight += 14f;
+            // Increase the camera height threshold
+            lastCameraHeight += cameraStep;
         }
-        else if (player.position.y < cameraHeight - 14f && cameraIndex > 0)
+        else if (player.position.y < lastCameraHeight)
         {
-            // Désactiver la caméra courante et activer la précédente
-            activeCamera.GetComponent<Camera>().enabled = false;
-            cameraIndex--;
-            activeCamera = cameras[cameraIndex];
+            // Move the camera down by cameraStep units
+            mainCamera.transform.position -= Vector3.up * cameraStep;
 
-            // Activer la nouvelle caméra
-            activeCamera.GetComponent<Camera>().enabled = true;
-
-            // Diminuer le seuil de hauteur de la caméra
-            cameraHeight -= 14f;
+            // Decrease the camera height threshold
+            lastCameraHeight -= cameraStep;
         }
-
-        // Déboguer la caméra active
-        Debug.Log(activeCamera);
-
     }
+
+
 }
+
