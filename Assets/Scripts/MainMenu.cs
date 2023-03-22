@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    // ctrl + b --> Build and Run
+    // ctrl + b --> Build and Run.
 
     public GameObject settingWindow;
 
