@@ -5,37 +5,39 @@ using UnityEngine;
 public class LoadCamera : MonoBehaviour
 {
     public Transform player;
-    public GameObject mainCamera;
-    public float cameraHeight = 14f;
-    public float cameraStep = 14f;
+    public GameObject Maincamera;
+    public float cameraHeight; 
 
-    private float lastCameraHeight;
 
-    void Start()
+    private void Start()
     {
-        lastCameraHeight = cameraHeight;
+        cameraHeight = 10f;//mettre le f
     }
 
     void Update()
     {
-        if (player.position.y >= lastCameraHeight + cameraStep)
+        // Check if the player has moved up or down enough to switch cameras
+        if (player.position.y >= cameraHeight)
         {
-            // Move the camera up by cameraStep units
-            mainCamera.transform.position += Vector3.up * cameraStep;
+            // Move the camera up by 14 units in Y
+            Vector3 cameraPos = Maincamera.transform.position;
+            cameraPos.y += 14f;//mettre le f
+            Maincamera.transform.position = cameraPos;
 
             // Increase the camera height threshold
-            lastCameraHeight += cameraStep;
+            cameraHeight += 14f;//mettre le f
         }
-        else if (player.position.y < lastCameraHeight)
+        else if (player.position.y < cameraHeight - 14f )//mettre le f
         {
-            // Move the camera down by cameraStep units
-            mainCamera.transform.position -= Vector3.up * cameraStep;
+            // Move the camera down by 14 units in Y
+            Vector3 cameraPos = Maincamera.transform.position;
+            cameraPos.y -= 14f;//mettre le f
+            Maincamera.transform.position = cameraPos;
 
             // Decrease the camera height threshold
-            lastCameraHeight -= cameraStep;
+            cameraHeight -= 14f;//mettre le f
         }
+
     }
 
-
 }
-
