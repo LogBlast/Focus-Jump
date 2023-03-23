@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float jumpDirection;
 
+    public static PlayerMovement instance;
+
 
     //ajout pour la barre qui suit le joueur 
    // public GameObject player;
