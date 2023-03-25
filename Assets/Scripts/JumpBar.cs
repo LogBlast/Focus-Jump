@@ -64,10 +64,18 @@ public class JumpBar : MonoBehaviour
 
     void Start()
     {
-
+        offset = transform.position - player.transform.position;
 
         // Masquer l'objet spécifié au démarrage
         gameO.transform.localScale = new Vector3(0, 0, 0);
+    }
+
+    private void LateUpdate()
+    {
+        if (player != null)
+        {
+            transform.position = player.transform.position + offset;
+        }
     }
 
     void FixedUpdate()
