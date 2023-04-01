@@ -18,6 +18,8 @@ public class JumpBar : MonoBehaviour
 
 
 
+
+
     public GameObject player;
     public Vector3 offset;
     //private Vector3 velocity;
@@ -25,14 +27,11 @@ public class JumpBar : MonoBehaviour
     void Update()
     {
 
-        if (player != null)
-        {
-            //Vector3 playerHeadPosition = Camera.main.WorldToScreenPoint(player.transform.position + offset);
-            //transform.position = playerHeadPosition;
-
-        }
+        
+    
 
 
+       
 
 
         // Si le bouton de saut est appuyé et le personnage est au sol
@@ -52,7 +51,7 @@ public class JumpBar : MonoBehaviour
         if (Input.GetButtonUp("Jump") && isGrounded)
         {
             // Masquer l'objet spécifié
-            gameO.transform.localScale = new Vector3(0, 0, 0);
+           // gameO.transform.localScale = new Vector3(0, 0, 0);
 
             // Si la coroutine est en cours d'exécution, l'arrêter
             if (c != null)
@@ -61,21 +60,25 @@ public class JumpBar : MonoBehaviour
             }
         }
     }
+    
+
+
+   
+
+
 
     void Start()
     {
-        offset = transform.position - player.transform.position;
+        
 
         // Masquer l'objet spécifié au démarrage
-        gameO.transform.localScale = new Vector3(0, 0, 0);
+        //gameO.transform.localScale = new Vector3(0, 0, 0);
     }
 
     private void LateUpdate()
     {
-        if (player != null)
-        {
-            transform.position = player.transform.position + offset;
-        }
+
+      
     }
 
     void FixedUpdate()
@@ -83,6 +86,9 @@ public class JumpBar : MonoBehaviour
         // Vérifier si le personnage est au sol en effectuant une collision avec un cercle de rayon groundCheckRadius
         // autour du point groundCheck
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
+
+        transform.position = player.transform.position + offset;
+
     }
 
     public void SetMinJump(int force)
