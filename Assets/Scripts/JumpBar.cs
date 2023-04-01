@@ -20,7 +20,7 @@ public class JumpBar : MonoBehaviour
 
     public GameObject player;
     public Vector3 offset;
-    private Vector3 velocity;
+    //private Vector3 velocity;
 
     void Update()
     {

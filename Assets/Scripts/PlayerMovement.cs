@@ -4,7 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool StartJumping ;
     public bool isGrounded;
-    public bool saut = false;
+   // public bool saut = false;
     public bool canMove;
     public Transform groundCheck;
     public float groundCheckRadius;
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     
     public float delayJump;
 
-    private float jumpDirection;
+  //  private float jumpDirection;
 
     public static PlayerMovement instance;
 
