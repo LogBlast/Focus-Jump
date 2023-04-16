@@ -7,6 +7,7 @@ public class EnnemyPatrol : MonoBehaviour
     public Transform[] wayPoints;
     private Transform target;
     private int destPoint=0;
+    
 
     public SpriteRenderer graphics; 
 
