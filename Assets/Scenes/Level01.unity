@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 19124926}
   - component: {fileID: 19124928}
   - component: {fileID: 19124927}
+  - component: {fileID: 19124929}
   m_Layer: 5
   m_Name: DialogueUI
   m_TagString: Untagged
@@ -202,6 +203,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19124925}
   m_CullTransparentMesh: 1
+--- !u!95 &19124929
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19124925}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b26c748363014404ca66900f4bd391e8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &30591857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,8 +1732,8 @@ MonoBehaviour:
   dialogue:
     nom: Jason
     phrase:
-    - Bonjour je m'appelle Jason.
-    - Je suiis content de vous rencontrer.
+    - Bienvenue dans FocusJump
+    - ' Je m''appelle Jason et je suis ravi de vous rencontrer'
   isInRange: 0
 --- !u!4 &428226992
 Transform:
@@ -1767,7 +1788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -38.999, y: 15}
+  m_AnchoredPosition: {x: -43.8, y: 13.5}
   m_SizeDelta: {x: 77.1048, y: 18.916}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431076779
@@ -1813,7 +1834,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 431076780}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 907133000}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: DisplayNextPhrase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &431076780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3221,6 +3254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomText: {fileID: 1471653976}
   dialogueText: {fileID: 211643768}
+  animator: {fileID: 19124929}
 --- !u!1 &912829705
 GameObject:
   m_ObjectHideFlags: 0
