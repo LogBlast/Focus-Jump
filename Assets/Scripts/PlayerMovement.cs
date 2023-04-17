@@ -107,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
         //Le systeme qui gere les animations (animator) recoit la variable Speed et switch l'animation repos a courir
         animator.SetFloat("Speed", characterVelocity); 
 
+
         //ajout de l'effet de rebond quand on cogne les murs
         if(jumpForce > 0)
         {

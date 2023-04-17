@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PickUpObject : MonoBehaviour
+public class PickUpCoin : MonoBehaviour
 {
 
 
