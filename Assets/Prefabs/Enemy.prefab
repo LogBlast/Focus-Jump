@@ -72,6 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToDestroy: {fileID: 6380502211895729817}
+  coinsToAdd: 1
+  kIllSound: {fileID: 8300000, guid: 371969f37a6fda8448be9a88776b68d1, type: 3}
 --- !u!1 &6380502211689116849
 GameObject:
   m_ObjectHideFlags: 0
