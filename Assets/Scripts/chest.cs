@@ -10,7 +10,8 @@ public class chest : MonoBehaviour
 
     public Animator animator;
     public int coinsToAdd;
-    
+    public AudioClip chestSound;
+
 
     void Awake()
     {
@@ -30,6 +31,7 @@ public class chest : MonoBehaviour
     {
         //si l'on ouvre le coffre on va avoir l'animation du coffre et pièce en plus décidé dans unity ensuite lorsque le coffre est ouvert on a plus le message affiché et on ne peux plus ouvrir le coffre
         animator.SetTrigger("openChest");
+        AudioManager.instance.PlayClipAt(chestSound, transform.position);
         Inventory.instance.AddCoins(coinsToAdd);
         GetComponent<BoxCollider2D>().enabled = false;
         interactUI.enabled = false;

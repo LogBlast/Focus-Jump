@@ -14,8 +14,16 @@ public class SettingsMenu : MonoBehaviour
     public Dropdown resolutionDropdown;
 
     Resolution[] resolutions;
+    public Slider musicSlider;
+    public Slider soundSlider;
 
     public void Start(){
+        audioMixer.GetFloat("Music", out float musicValueForSlider);
+        musicSlider.value = musicValueForSlider;
+
+        audioMixer.GetFloat("Sound", out float soundValueForSlider);
+        soundSlider.value = soundValueForSlider;
+
         resolutions = Screen.resolutions.Select(resolution => new Resolution {width = resolution.width, height = resolution.height}).Distinct().ToArray();
         // récupère toutes les résolutions via une requête comme en SQL pour ne pas faire de duplication
         
@@ -41,11 +49,21 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
-    public void setVolume(float volume){
-        
-        audioMixer.SetFloat("volume", volume);  // la variable "volume" est dans audioMixer puis en haut à droite de audioMixer --> "Exposed Parameters"
+    public void setVolume(float volume)
+    {
 
-     // la valeur va changer quand on bouge le curseur du slider (regarder dans le slider la fonction "On Value Change" ).
+        audioMixer.SetFloat("Music", volume);  // la variable "Music" est dans audioMixer puis en haut à droite de audioMixer --> "Exposed Parameters"
+
+        // la valeur va changer quand on bouge le curseur du slider (regarder dans le slider la fonction "On Value Change" ).
+
+    }
+
+    public void setSoundVolume(float volume)
+    {
+
+        audioMixer.SetFloat("Sound", volume);  // la variable "Sound" est dans audioMixer puis en haut à droite de audioMixer --> "Exposed Parameters"
+
+        // la valeur va changer quand on bouge le curseur du slider (regarder dans le slider la fonction "On Value Change" ).
 
     }
 

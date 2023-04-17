@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    public AudioClip jumpSound;
 
     private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
@@ -177,6 +178,7 @@ public class PlayerMovement : MonoBehaviour
         // Si le joueur est en train de sauter
         if (StartJumping == true)
         {
+            AudioManager.instance.PlayClipAt(jumpSound, transform.position);
             // On calcule la durée du saut en millisecondes
             int dif_jump = (int)(jumpEnd - jumpStart).TotalMilliseconds;
 
