@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 9675aa40514e8d04fa84c3e6ebe39938, type: 2}
-  soundToPlay: {fileID: 0}
+  soundToPlay: {fileID: 8300000, guid: d67d4a438de685748a1b3285c7fcdb72, type: 3}
 --- !u!61 &6919084393503968565
 BoxCollider2D:
   m_ObjectHideFlags: 0
