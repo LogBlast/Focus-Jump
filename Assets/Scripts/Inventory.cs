@@ -81,7 +81,7 @@ public class Inventory : MonoBehaviour
         if(content.Count > 0)
         {
             itemImageUI.sprite = content[contentCurrentIndex].image; //le dernier .image viens du script item public Sprite image;
-            itemNameUI.text = content[contentCurrentIndex].name;
+            itemNameUI.text = content[contentCurrentIndex].nameObject;
 
         }
         else
@@ -116,4 +116,10 @@ public class Inventory : MonoBehaviour
         coinsCount += count;
         coinsCountText.text = coinsCount.ToString();
     }
+
+    public void UpdateTextUI()
+    {
+        coinsCountText.text = coinsCount.ToString();
+    }
+
 }

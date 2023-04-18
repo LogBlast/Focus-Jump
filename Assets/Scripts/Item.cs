@@ -5,9 +5,10 @@ public class Item : ScriptableObject // DIFFERENT DE D4HABITUDE, aller voir la v
 {
 
     public int id;
-    public string name;
+    public string nameObject;
     public string description;
     public Sprite image; //pour mettre l'image de la potion
+    public int price;
 
     public int hpGiven;
     public int speedGiven;
