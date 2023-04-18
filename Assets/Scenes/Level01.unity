@@ -8463,6 +8463,7 @@ MonoBehaviour:
   coinsCount: 0
   coinsCountText: {fileID: 113696164}
   playerEffects: {fileID: 2062261561}
+  Sound: {fileID: 8300000, guid: ddbf58eb67330fe43a6b6b263006d36a, type: 3}
 --- !u!4 &1694875060
 Transform:
   m_ObjectHideFlags: 0

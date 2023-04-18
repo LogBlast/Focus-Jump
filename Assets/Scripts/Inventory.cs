@@ -16,6 +16,7 @@ public class Inventory : MonoBehaviour
 
     public static Inventory instance; //la variable static nous permet d'acceder a l'inventaire depuis n'importe ou 
     public PlayerEffects playerEffects;
+    public AudioClip Sound;
 
     //Permet de gerer l'inventaire 
     private void Awake()
@@ -105,6 +106,7 @@ public class Inventory : MonoBehaviour
         Item currentItem = content[contentCurrentIndex];
         // PlayerHealth.instance.healPlayer(currentItem.hpGiven);
         playerEffects.AddSpeed(currentItem.speedGiven, currentItem.speedDuration);//recupere la valeur de la potion de vitesse 
+        AudioManager.instance.PlayClipAt(Sound, transform.position);
         content.Remove(currentItem);
         GetNextItem();
         UpdateInventoryUI();
