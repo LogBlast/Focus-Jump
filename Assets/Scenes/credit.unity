@@ -123,6 +123,151 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &221423470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 221423473}
+  - component: {fileID: 221423472}
+  - component: {fileID: 221423471}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &221423471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221423470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498e250fe7439434f809800d21301d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playlist:
+  - {fileID: 8300000, guid: 303f7eaff829bda41a238802f761e373, type: 3}
+  audioSource: {fileID: 221423472}
+  soundEffectMixer: {fileID: 2620201084780074158, guid: 3e1c60c90cb22294ab298cf1e9e069b4, type: 2}
+--- !u!82 &221423472
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221423470}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 7501518343016358135, guid: 3e1c60c90cb22294ab298cf1e9e069b4, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &221423473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221423470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.01, y: -0.11, z: -0.50442165}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1029028910
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,29 +326,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Le Web s\xE9mantique, ou toile s\xE9mantique1, est une extension du Web
-    standardis\xE9e par le World Wide Web Consortium (W3C)2. Ces standards encouragent
-    l'utilisation de formats de donn\xE9es et de protocoles d'\xE9change norm\xE9s
-    sur le Web, en s'appuyant sur le mod\xE8le Resource Description Framework (RDF).\n\nLe
-    Web s\xE9mantique est par certains qualifi\xE9 de Web 3.0.\n\nSelon le W3C, \xAB
-    le Web s\xE9mantique fournit un mod\xE8le qui permet aux donn\xE9es d'\xEAtre
-    partag\xE9es et r\xE9utilis\xE9es entre plusieurs applications, entreprises et
-    groupes d'utilisateurs \xBB3. L'expression a \xE9t\xE9 invent\xE9e par Tim Berners-Lee4
-    (inventeur du Web et directeur du W3C), qui supervise le d\xE9veloppement des
-    technologies communes du Web s\xE9mantique. Il le d\xE9finit comme \xAB une toile
-    de donn\xE9es qui peuvent \xEAtre trait\xE9es directement et indirectement par
-    des machines pour aider leurs utilisateurs \xE0 cr\xE9er de nouvelles connaissances
-    \xBB. Pour y parvenir, le Web s\xE9mantique met en \u0153uvre le Web des donn\xE9es
-    qui consiste \xE0 lier et structurer l'information sur Internet pour acc\xE9der
-    simplement \xE0 la connaissance qu'elle contient d\xE9j\xE03.\n\nAlors que ses
-    d\xE9tracteurs ont mis en doute sa faisabilit\xE9, ses promoteurs font valoir
-    que les applications r\xE9alis\xE9es par les chercheurs dans l'industrie, la
-    biologie et les sciences humaines et sociales ont d\xE9j\xE0 prouv\xE9 la validit\xE9
-    de ce nouveau concept5. L'article original de Tim Berners-Lee en 2001 dans le
-    Scientific American a d\xE9crit une \xE9volution attendue du Web existant vers
-    un Web s\xE9mantique6, mais cela n'a pas encore eu lieu. En 2006, Tim Berners-Lee
-    et ses coll\xE8gues ont d\xE9clar\xE9 : \xAB Cette id\xE9e simple\u2026 reste
-    largement inexploit\xE9e. \xBB7"
+  m_text: "Cr\xE9\xE9 par : \r\n\r\nEsteban Dubois\r\n\r\nJ\xE9r\xE9my Dufresne\r\n\r\nAur\xE9lien
+    Goron\r\n\r\nEthan Begue\r\n\r\nPour notre projet de deuxi\xE8me ann\xE9e en
+    BUT INFORMATIQUE\r\n\r\nA l'IUT d'Orsay\r\n\r\n\n\nRemerciements : \r\n\r\nNicolas
+    Rediel\r\n\r\n\n\nInspir\xE9 par le tutoriel fait par :\r\n\r\nTUTO UNITY FR
+    \r\n\r\n\r\n\r\n\nSources :\r\n\r\n\n\nPour nos visuels : \r\n\r\n- Buch - A
+    platformer in the forest \r\nhttp://blog-buch.rhcloud.com\r\n\r\n- TUTO UNITY
+    FR \r\nhttps://www.youtube.com/@TUTOUNITYFR\r\n\r\n\n\n\nPour nos musiques :
+    \r\n\r\n- Little Universe - Alexandr Zhelanovs\r\nhttps://www.youtube.com/@AlexandrZhelanovsMusic\r\n\r\n-
+    Hero Immortal - Trevor Lentz\r\n\r\n\r\n- Green Hills - Igor Gundarev\r\n\r\n\n\n\n\r\nPour
+    nos bruitages : \r\n\r\n- 8-Bit Sound Effects Library - Little Robot Sound Factory\r\nwww.littlerobotsoundfactory.com\r\n\r\n\n\n\r\nPour
+    notre police d'\xE9criture : \r\n\r\n- Pixelated - Skylar Park\r\n\r\n\r\n\r\n\r\nJeu
+    inspir\xE9 par le jeu JUMP KING - Par Nexile\r\n\r\n\r\n\r\n\r\nMerci d'avoir
+    test\xE9 notre jeu ! "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -230,8 +365,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 90
+  m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -412,7 +547,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1029028911}
-  - {fileID: 1798688171}
   m_Father: {fileID: 1196841870}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -489,7 +623,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.4745098, g: 0.25461933, b: 0.19215688, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -506,7 +640,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7.618524
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -605,79 +739,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1798688170
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1798688171}
-  - component: {fileID: 1798688173}
-  - component: {fileID: 1798688172}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1798688171
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798688170}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1486728554}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2740}
-  m_SizeDelta: {x: 1035, y: 1903}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1798688172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798688170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f95aeca53e2294082974cf07ab0dfe85, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1798688173
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798688170}
-  m_CullTransparentMesh: 1
