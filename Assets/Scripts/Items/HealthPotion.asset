@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: HealthPotion
   m_EditorClassIdentifier: 
   id: 1
-  nameObject: HealthPotion
+  nameObject: HEALTH-POTION
   description: donne de la vie mais je le fais juste pour avoir l'exemple
   image: {fileID: 21300000, guid: e317ce20bcf517c46b0e03eb524f0113, type: 3}
   price: 1
   hpGiven: 20
   speedGiven: 0
   speedDuration: 0
+  powerJump: 0
+  jumpDuration: 0

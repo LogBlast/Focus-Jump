@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: SpeedPotion
   m_EditorClassIdentifier: 
   id: 2
-  nameObject: SpeedPotion
+  nameObject: SPEED-POTION
   description: "potion de vitesse de 300 unit\xE9 3 seconds"
   image: {fileID: 21300000, guid: d18147636fe92b34aa26493d5571eb73, type: 3}
   price: 2
   hpGiven: 0
   speedGiven: 300
   speedDuration: 3
+  powerJump: 0
+  jumpDuration: 0

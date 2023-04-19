@@ -40,6 +40,17 @@ public class DialogueManager : MonoBehaviour
         DisplayNextPhrase();
     }
 
+    public void StartDialogueShop()
+    {
+
+        animator.SetBool("isOpen2", true);
+        
+    }
+    public void EndDialogueShop()
+    {
+        animator.SetBool("isOpen2", false);
+    }
+
     public void DisplayNextPhrase()
     {
         if (phrases.Count == 0)

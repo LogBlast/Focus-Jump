@@ -16,6 +16,8 @@ public class ShopTrigger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && isInRange)
         {
             ShopManager.instance.OpenShop(itemsToSell, pnjName);
+
+            //DialogueManager.instance.StartDialogueShop();
         }
     }
     void Awake()
@@ -38,6 +40,7 @@ public class ShopTrigger : MonoBehaviour
             isInRange = false;
             interactUI.enabled = false;
             ShopManager.instance.CloseShop();
+           // DialogueManager.instance.EndDialogueShop();
             //DialogueManager.instance.EndDialogue();
         }
     }

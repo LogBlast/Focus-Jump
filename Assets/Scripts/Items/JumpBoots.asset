@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JumpBoots
   m_EditorClassIdentifier: 
   id: 3
-  nameObject: JumpBoots
+  nameObject: JUMP-BOOTS
   description: bottes qui augmente la puissance du saut
   image: {fileID: 21300000, guid: 5b6b00927db938848914c72c8f32b0ab, type: 3}
   price: 5
