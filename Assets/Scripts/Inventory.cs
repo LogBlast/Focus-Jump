@@ -106,6 +106,8 @@ public class Inventory : MonoBehaviour
         Item currentItem = content[contentCurrentIndex];
         // PlayerHealth.instance.healPlayer(currentItem.hpGiven);
         playerEffects.AddSpeed(currentItem.speedGiven, currentItem.speedDuration);//recupere la valeur de la potion de vitesse 
+        playerEffects.AddJumpForce(currentItem.powerJump, currentItem.jumpDuration);//recupere la valeur saut
+
         AudioManager.instance.PlayClipAt(Sound, transform.position);
         content.Remove(currentItem);
         GetNextItem();

@@ -13,6 +13,7 @@ public class Item : ScriptableObject // DIFFERENT DE D4HABITUDE, aller voir la v
     public int hpGiven;
     public int speedGiven;
     public int speedDuration;
-
+    public float powerJump;
+    public int jumpDuration;
 
 }
