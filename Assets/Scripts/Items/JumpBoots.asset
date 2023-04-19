@@ -20,5 +20,5 @@ MonoBehaviour:
   hpGiven: 0
   speedGiven: 500
   speedDuration: 0
-  powerJump: 100
-  powerJumpDuration: 10
+  powerJump: 500
+  jumpDuration: 10

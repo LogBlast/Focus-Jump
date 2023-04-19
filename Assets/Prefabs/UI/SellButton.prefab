@@ -217,6 +217,7 @@ MonoBehaviour:
   itemName: {fileID: 3492232601331801487}
   itemImage: {fileID: 3492232600474059232}
   itemPrice: {fileID: 3492232601625030786}
+  item: {fileID: 0}
 --- !u!1 &3492232600990789103
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +362,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 67521c9a14674c948956971a6c635f50, type: 3}
-    m_FontSize: 10
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 8
