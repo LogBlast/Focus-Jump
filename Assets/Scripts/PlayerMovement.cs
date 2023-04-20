@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public AudioClip jumpSound;
 
-    private Vector3 velocity = Vector3.zero;
+    public Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
     
     public float delayJump;
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     //ajout pour la barre qui suit le joueur 
    // public GameObject player;
     //public float timeOffset;
-    //public Vector3 posOffset;
+    public Vector3 posPlayer;
 
     public PhysicsMaterial2D bounceMat, normalMat;
 
@@ -152,9 +152,10 @@ public class PlayerMovement : MonoBehaviour
         // à la liste collisionLayers, alors le joueur est considéré comme étant au sol.
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
 
+        posPlayer = instance.transform.position;
 
 
-        
+
 
 
     }

@@ -18,20 +18,14 @@ public class JumpBar : MonoBehaviour
 
 
 
-
-
-    public GameObject player;
-    public Vector3 offset;
-    //private Vector3 velocity;
-
     void Update()
     {
 
         
-    
+
+        
 
 
-       
 
 
         // Si le bouton de saut est appuyé et le personnage est au sol
@@ -51,7 +45,7 @@ public class JumpBar : MonoBehaviour
         if (Input.GetButtonUp("Jump") && isGrounded)
         {
             // Masquer l'objet spécifié
-           // gameO.transform.localScale = new Vector3(0, 0, 0);
+            gameO.transform.localScale = new Vector3(0, 0, 0);
 
             // Si la coroutine est en cours d'exécution, l'arrêter
             if (c != null)
@@ -72,13 +66,14 @@ public class JumpBar : MonoBehaviour
         
 
         // Masquer l'objet spécifié au démarrage
-        //gameO.transform.localScale = new Vector3(0, 0, 0);
+        gameO.transform.localScale = new Vector3(0, 0, 0);
     }
 
     private void LateUpdate()
     {
 
-      
+        
+
     }
 
     void FixedUpdate()
@@ -87,7 +82,11 @@ public class JumpBar : MonoBehaviour
         // autour du point groundCheck
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
 
-        transform.position = player.transform.position + offset;
+        //transform.position = player.transform.position + offset;
+        // Déplacer la jumpBar en utilisant la position du player et l'offset spécifié
+
+        
+
 
     }
 
