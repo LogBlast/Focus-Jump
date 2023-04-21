@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 4452315079408338222}
   coinsToAdd: 5
+  chestSound: {fileID: 8300000, guid: fe65275a42f2e304ea1b783cb14c0d9f, type: 3}
 --- !u!61 &4452315079408338227
 BoxCollider2D:
   m_ObjectHideFlags: 0
