@@ -46636,6 +46636,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1134504490863775338, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134504490863775338, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0.05345905
       objectReference: {fileID: 0}
@@ -46724,6 +46728,10 @@ PrefabInstance:
       value: -53.193
       objectReference: {fileID: 0}
     - target: {fileID: 1134504491426845897, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134504491426845897, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0.9827962
       objectReference: {fileID: 0}
@@ -46754,6 +46762,10 @@ PrefabInstance:
     - target: {fileID: 1134504491426845902, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 50.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134504491551302548, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1134504491551302548, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
