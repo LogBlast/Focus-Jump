@@ -46311,6 +46311,10 @@ PrefabInstance:
       propertyPath: groundCheck
       value: 
       objectReference: {fileID: 279361012}
+    - target: {fileID: 1134504490104270235, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
+      propertyPath: collisionLayers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 1134504490177159993, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
       propertyPath: m_Color.a
       value: 1
