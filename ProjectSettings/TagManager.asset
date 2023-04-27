@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CameraTrigger
   - InteractUI
+  - Terrain
   layers:
   - Default
   - TransparentFX

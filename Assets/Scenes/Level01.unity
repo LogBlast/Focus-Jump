@@ -7330,7 +7330,7 @@ GameObject:
   - component: {fileID: 1449969988}
   - component: {fileID: 1449969987}
   - component: {fileID: 1449969989}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fondation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47230,5 +47230,9 @@ PrefabInstance:
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 8300000, guid: 8f4834b7a2a30a54ea1fd95ee1475485, type: 3}
+    - target: {fileID: 6813085875105738163, guid: b86c3f39d7171f6478e93fd2a1d5adf4, type: 3}
+      propertyPath: collisionLayers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b86c3f39d7171f6478e93fd2a1d5adf4, type: 3}
