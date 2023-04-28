@@ -31218,6 +31218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeRemaining: 0
   timeText: {fileID: 1909611767}
+  isActive: 1
 --- !u!114 &1909611767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46756,8 +46757,24 @@ PrefabInstance:
       value: 17.500008
       objectReference: {fileID: 0}
     - target: {fileID: 1134504490749407780, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134504490749407780, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134504490749407780, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134504490749407780, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -134
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134504490749407781, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1134504490787858437, guid: 8f6dafc6546bf21498e743ef86bf20a8, type: 3}
       propertyPath: m_FontData.m_FontSize
@@ -47328,11 +47345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6813085875105738159, guid: b86c3f39d7171f6478e93fd2a1d5adf4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.09
+      value: -16.01
       objectReference: {fileID: 0}
     - target: {fileID: 6813085875105738159, guid: b86c3f39d7171f6478e93fd2a1d5adf4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 51.85
+      value: 89.75
       objectReference: {fileID: 0}
     - target: {fileID: 6813085875105738159, guid: b86c3f39d7171f6478e93fd2a1d5adf4, type: 3}
       propertyPath: m_LocalPosition.z

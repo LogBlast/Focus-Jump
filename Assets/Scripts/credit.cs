@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class credit : MonoBehaviour
 {
+    Timer time;
+
+    private void Start()
+    {
+        time = FindObjectOfType<Timer>();
+    }
+
+
     public void LoadMainMenu(){
         SceneManager.LoadScene("MainMenu");
     }
@@ -13,6 +21,11 @@ public class credit : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape)){
             LoadMainMenu();
+        }
+
+        if (time != null)
+        {
+            time.isActive = false;
         }
 
     }
