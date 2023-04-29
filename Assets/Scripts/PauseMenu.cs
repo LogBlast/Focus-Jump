@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
-
+    public GameObject inputWindow;
     public GameObject settingsWindow;
 
 
@@ -65,6 +65,17 @@ public class PauseMenu : MonoBehaviour
     public void CloseSettingsWindow()
     {
         settingsWindow.SetActive(false);
+    }
+
+    //INPUT
+    public void SettingsInputButton()
+    {
+        inputWindow.SetActive(true);
+    }
+
+    public void CloseInputWindow()
+    {
+        inputWindow.SetActive(false);
     }
 
 }

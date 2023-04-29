@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
 
     public PhysicsMaterial2D bounceMat, normalMat;
 
+    public Inventory inventory; 
+
     private void Awake(){
         if(instance != null){
             Debug.LogWarning("Il y a plus d'une instance de PlayerMovement dans la scène");
@@ -73,7 +75,11 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-       
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            inventory.ConsumeItem();   
+        }
+
 
 
 
